@@ -26,8 +26,33 @@ def weather_helper():
 
   Additional requirements:
     1. You can assume the user will enter an integer for the temperature.
-    3. Assume the user will respond to any yes/no question with an affirmative response such as "yes", "yeah", "yup"; or a negative response such as "no", "nah", or "nope".
-    2. Do not print anything more than what is requested in the instructions.
+    2. Assume the user will respond to any yes/no question with an affirmative response such as "yes", "yeah", "yup"; or a negative response such as "no", "nah", or "nope".
+    3. Do not print anything more than what is requested in the instructions.
     4. The capitalization of the user's responses must not matter to the outcome of the program.
   """
-
+  temperature = int(input("Enter in the current temperature in degrees Farenheit: "))
+  if temperature < -70 or temperature > 134:
+    print("Invalid temperature!")
+  else:
+    if temperature < 40:
+      answer_of_snowing = input("Whether it is snowing? ").lower()
+      if answer_of_snowing in ["yes", "yeah", "yup"]:
+        wearing_a_jacket = input("Whether are you wearing a warm jacket? ").lower()
+        if wearing_a_jacket in ["yes", "yeah", "yup"]:
+          print("Glad to hear you're dressed appropriately!")
+        elif wearing_a_jacket in ["no", "nah", "nope"]:
+          print("What were you thinking when you left home today?!")
+      elif answer_of_snowing in ["no", "nah", "nope"]:
+        answer_of_raining = input("Whether it is raining? ").lower()
+        if answer_of_raining in ["yes", "yeah", "yup"]:
+          umbrella = input("Whether do you have an umbrella? ").lower()
+          if umbrella in ["yes", "yeah", "yup"]:
+            print("Good job staying dry!")
+          elif umbrella in ["no", "nah", "nope"]:
+            print("You must enjoy getting wet!")
+    elif temperature > 90:
+      airconditioning = input("Whether of you have an airconditioning? ").lower()
+      if airconditioning in ["yes", "yeah", "yup"]:
+        print("Stay cool indoors.")
+      elif airconditioning in ["no", "nah", "nope"]:
+        print("I hope you have a fan.")
